@@ -5,9 +5,9 @@ print("Welcome to Homeless Resources! Please fill the form below to find a nearb
 state_id = ""
 user_state = input("What state do you live in? ")
 user_age = input("What is your current age? ")
-user_gender = input("What is your gender? Female, Male, or N/A ")
+user_gender = input("What is your gender? (Female, Male, or N/A) ")
 user_assistance = input(
-    "What is the assistance you will need? Food, Shelter, Hygiene, Job Assistance, Transportation ")
+    "What is the assistance you will need? (Food, Shelter, Hygiene, Job Assistance, Transportation) ")
 id_number = random.randrange(1000, 9999)
 
 state = {
@@ -64,5 +64,5 @@ state = {
 }
 
 
-print("Thank you for filling the form! Your state: " + user_state + ", Age: " + str(user_age) +
-      ", Gender: " + user_gender + ", Assistance: " + user_assistance + ". Your assigned ID will be " + state[user_state] + str(id_number)) 
+print("Thank you for filling the form! Here's the info we received: State: " + user_state + ", Age: " + str(user_age) +
+      ", Gender: " + user_gender + ", Assistance: " + user_assistance + ". Your assigned ID will be " + state[user_state.lower()] + str(id_number)) 
