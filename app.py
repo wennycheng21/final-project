@@ -3,17 +3,20 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from datetime import datetime
+from model import getShelter
+import os
 # from flask_pymongo import PyMongo
 
 
 # -- Initialization section --
 app = Flask(__name__)
 
-events = [
-        {"event":"First Day of Classes", "date":"2019-08-21"},
-        {"event":"Winter Break", "date":"2019-12-20"},
-        {"event":"Finals Begin", "date":"2019-12-01"}
-    ]
+# events = [
+#         {"event":"First Day of Classes", "date":"2019-08-21"},
+#         {"event":"Winter Break", "date":"2019-12-20"},
+#         {"event":"Finals Begin", "date":"2019-12-01"}
+#     ]
 
 # name of database
 # app.config['MONGO_DBNAME'] = 'database-name'
@@ -30,17 +33,20 @@ events = [
 @app.route('/index')
 
 def index():
-    return render_template('index.html', events = events)
+    return render_template('index.html',time = datetime.now())
 
 
 # CONNECT TO DB, ADD DATA
 
-@app.route('/add')
+@app.route('/yourShelter',methods = ['GET', 'POST'])
 
-def add():
+def yourShelter():
+    shelter_info = getShelter()
+    print(shelter_info)
+    
     # connect to the database
 
     # insert new data
 
     # return a message to the user
-    return ""
+    return render_template("shelter.html",time = datetime.now(), shelter_info = shelter_info)
