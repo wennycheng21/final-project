@@ -1,15 +1,15 @@
 <html>
     <head>
-        <title>Community Events Board</title>
+        <title>Homeless Resource Login </title>
     </head>
     <body>
-      <h1>Community Events Board</h1>
-      <div class="event-list">
-        <ul>
-          {% for event in events %}
-            <li>{{ event.event }} - {{ event.date }}</li>
-          {% endfor %}
-        </ul>
-      </div>
+        <h1>Homeless Resource Login</h1>
+        <form method="POST" action="/login">
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="">
+            <label for="password">Password</label>
+            <input type="text" name="password" value="">
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </html>
