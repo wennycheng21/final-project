@@ -65,4 +65,4 @@ state = {
 
 
 print("Thank you for filling the form! Your state: " + user_state + ", Age: " + str(user_age) +
-      ", Gender: " + user_gender + "." "Your assigned ID will be " + state[user_state] + str(id_number)) 
+      ", Gender: " + user_gender + ", Assistance: " + user_assistance + ". Your assigned ID will be " + state[user_state] + str(id_number)) 
