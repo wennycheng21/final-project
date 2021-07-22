@@ -7,7 +7,7 @@ user_state = input("What state do you live in? ")
 user_age = input("What is your current age? ")
 user_gender = input("What is your gender? Female, Male, or N/A ")
 user_assistance = input(
-    "What is the first assistance you will need? Food, Shelter, Hygiene, Job Assistance, Transportation ")
+    "What is the assistance you will need? Food, Shelter, Hygiene, Job Assistance, Transportation ")
 id_number = random.randrange(1000, 9999)
 
 state = {
