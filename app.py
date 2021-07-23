@@ -38,30 +38,17 @@ app.secret_key = '_5#y2L"F4Q8z\n\xec]/'
 @app.route('/index')
 
 def index():
-<<<<<<< HEAD
-    #return render_template('index.html', events = events)
-    session.clear()
-    events = mongo.db.events  # creates events in mongo even though you might not have one
-    events = events.find({})
-    return render_template('index.html', events=events)
-=======
     return render_template('index.html',time = datetime.now())
->>>>>>> a11ca0140a4194340395b5b3b4c7c4a6e53bd266
 
 
 # CONNECT TO DB, ADD DATA
 
-<<<<<<< HEAD
-@app.route('/add')
-def add():
-=======
 @app.route('/yourShelter',methods = ['GET', 'POST'])
 
 def yourShelter():
     shelter_info = getShelter()
     print(shelter_info)
     
->>>>>>> a11ca0140a4194340395b5b3b4c7c4a6e53bd266
     # connect to the database
     events = mongo.db.events
 
