@@ -3,8 +3,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-# from flask_pymongo import PyMongo
-
+from flask_pymongo import PyMongo
+from flask import redirect
+from flask import session
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -17,11 +18,17 @@ app = Flask(__name__)
 
 # name of database
 # app.config['MONGO_DBNAME'] = 'database-name'
+app.config['MONGO_DBNAME'] = 'database'
 
 # URI of database
-# app.config['MONGO_URI'] = 'mongo-uri'
+app.config['MONGO_URI'] = 'mongodb+srv://admin:Dw84pzbMkdHNBoJs@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
 
-# mongo = PyMongo(app)
+mongo = PyMongo(app)
+app.secret_key = '_5#y2L"F4Q8z\n\xec]/'
+# URI of database
+#app.config['MONGO_URI'] = 'mongo-uri'
+
+#mongo = PyMongo(app)
 
 # -- Routes section --
 # INDEX
@@ -30,17 +37,49 @@ app = Flask(__name__)
 @app.route('/index')
 
 def index():
-    return render_template('index.html', events = events)
+    #return render_template('index.html', events = events)
+    session.clear()
+    events = mongo.db.events  # creates events in mongo even though you might not have one
+    events = events.find({})
+    return render_template('index.html', events=events)
 
 
 # CONNECT TO DB, ADD DATA
 
 @app.route('/add')
-
 def add():
     # connect to the database
+    events = mongo.db.events
 
     # insert new data
+   # events.insert({"event": "First Day of Classes",
+                  # "date": "2021-09-13"})
+
+    #events.insert({"event": "birthday",
+                   # "date": "2003-04-24"})
 
     # return a message to the user
     return ""
+
+# login page
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == "GET":
+        return render_template("account.html")
+    else:
+        # this creates a user's database in mongo db if it doesn't already exist
+
+        users = mongo.db.users
+
+        # this stores form data into a user's dictionary
+        user = {
+            "username": request.form["username"],
+            "password": request.form["password"]
+        }
+        users.insert(user)  # add our user data into mongo
+       # tell the browser session who the user is
+        session["username"] = request.form["username"]
+        return "Congratulations, you made an account: @ " + request.form["username"]
+       
+
+
