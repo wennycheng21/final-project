@@ -23,15 +23,16 @@ uri_password = os.getenv("PASSWORD")
 app.config['MONGO_DBNAME'] = 'database'
 
 # URI of database
-app.config['MONGO_URI'] = 'mongodb+srv://admin:' + uri_password + '@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://admin:' + uri_password + \
+    '@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
 
 # URI of database
-#app.config['MONGO_URI'] = 'mongo-uri'
+# app.config['MONGO_URI'] = 'mongo-uri'
 
-#mongo = PyMongo(app)
+# mongo = PyMongo(app)
 
 # -- Routes section --
 # INDEX
@@ -60,9 +61,10 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html",time = datetime.now(), shelter_info = shelter_info)
+    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info)
 
 # login page
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -70,32 +72,57 @@ def signup():
         return render_template("signup.html")
     else:
         # this creates a user's database in mongo db if it doesn't already exist
- 
+
         users = mongo.db.users
- 
+
         # this stores form data into a user's dictionary
         user = {
             "username": request.form["username"],
             "password": request.form["password"]
         }
- 
+
         # checks if user already exists in the database
         existing_user = users.find_one({'username': user['username']})
-        
-        
+
         # make condition to check if user already exists in mongo
         if existing_user is None:
             users.insert(user)  # add our user data into mongo
-      
-      
+
        # tell the browser session who the user is
             session["username"] = request.form["username"]
-            
-            
+
             # return "Congratulations, you made an account: @ " + request.form["username"]
             return render_template("index.html")
         else:
             return "Unfortunately, the username is taken."
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+   if request.method == "GET":
+       return render_template("login.html")
+   else:
+       # this creates a user's database in mongo db if it doesn't already exist
+ 
+        users = mongo.db.users
+ 
+         # this stores form data into a user's dictionary
+        user = {
+            "username": request.form["username"],
+            "password": request.form["password"]
+       }
+ 
+        # checks if user already exists in the database
+        existing_user = users.find_one({'username': user['username']})
+        # make condition to check if user already exists in mongo
+        if existing_user:
+            # if it does exists, we are checking if the password matches
+            if user['password'] == existing_user['password']:
+                session['username'] = user['username']
+                return redirect('/')
+            else:
+                error = "Incorrect password.Plesse try again."
+                return render_template('login.html', error=error)
+
  
  
 
