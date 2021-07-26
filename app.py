@@ -6,6 +6,8 @@ from flask import request
 from flask_pymongo import PyMongo
 from flask import redirect
 from flask import session
+from datetime import datetime
+from model import getShelter
 import os
 from model import getShelter
 from datetime import datetime
@@ -48,7 +50,7 @@ def yourShelter():
     print(shelter_info)
 
     # connect to the database
-    events = mongo.db.events
+    # events = mongo.db.events
 
     # insert new data
    # events.insert({"event": "First Day of Classes",
@@ -58,7 +60,7 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return ""
+    return render_template("shelter.html",time = datetime.now(), shelter_info = shelter_info)
 
 # login page
 
