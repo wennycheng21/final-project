@@ -1,4 +1,4 @@
-# ---- YOUR APP STARTS HERE ----
+
 # -- Import section --
 from flask import Flask
 from flask import render_template
@@ -18,14 +18,17 @@ app = Flask(__name__)
 #     ]
 
 # name of database
+app.secret_key = os.getenv("SECRET_KEY")
+uri_password = os.getenv("PASSWORD")
 # app.config['MONGO_DBNAME'] = 'database-name'
 app.config['MONGO_DBNAME'] = 'database'
 
 # URI of database
-app.config['MONGO_URI'] = 'mongodb+srv://admin:Dw84pzbMkdHNBoJs@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://admin:' + uri_password + '@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
-app.secret_key = '_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = '\xac\xbdpL\xc4~\xf1\xc5\xd8\x97\x8bV\xa1\xc6\ta'
+
 # URI of database
 #app.config['MONGO_URI'] = 'mongo-uri'
 
