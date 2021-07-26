@@ -8,6 +8,7 @@ from flask import redirect
 from flask import session
 import os
 
+
 # -- Initialization section --
 app = Flask(__name__)
 
@@ -89,7 +90,13 @@ def login():
             users.insert(user)  # add our user data into mongo
        # tell the browser session who the user is
             session["username"] = request.form["username"]
-            return "Congratulations, you made an account: @ " + request.form["username"]
-
+            #return "Congratulations, you made an account: @ " + request.form["username"]
+            return render_template("index.html")
         else:
             return "Unfortunately, the username is taken."
+
+@app.route('/logout')
+def logout():
+#removes session
+    session.clear()
+    return redirect('/')
