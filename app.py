@@ -122,6 +122,8 @@ def login():
             else:
                 error = "Incorrect password.Plesse try again."
                 return render_template('login.html', error=error)
+        else: 
+            return redirect('/signup.')
 
  
  
