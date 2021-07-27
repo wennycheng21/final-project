@@ -84,7 +84,7 @@ def signup():
             "reside": request.form["reside"],
             "age": request.form["age"],
             "gender": request.form["gender"],
-            "type_assistance": request.form["type_assistance"]
+            # "type_assistance": request.form["type_assistance"]
         }
 
         # checks if user already exists in the database
@@ -97,10 +97,10 @@ def signup():
        # tell the browser session who the user is
             session["username"] = request.form["username"]
 
-            return "Congratulations, you made an account: @ " + request.form["username"]
-            return render_template("index.html")
+            return "Congratulations, you made an account: @" + request.form["username"]
+            return render_template('/')
         else:
-            return "Unfortunately, the username is taken."
+            return "Unfortunately, this username is taken. Please try again." + render_template('signup.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])

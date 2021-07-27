@@ -6,24 +6,27 @@
 
 <body>
     <h1>Homeless Resources</h1>
-    <div class="homeless-resource">
-       <ul>
-        <li> <a href = '/signup'>SIGN UP</a> </li>
-        <li> <a href='/login'>LOGIN</a> </li>
-        <ul>
-            {% for event in events %}
-            <li>{{ event.event }} - {{ event.date }}</li>
-            {% endfor %}
-        </ul>
-    </div>
     <div>
         <!-- syntax for checking if a session was started -->
         {% if session %}
-        <p> Hi {{  session["username"] }}</p>
-      
+        <h4> Hi {{  session["username"] }}! Welcome to Homeless Resources!</h4>
+    <div class="homeless-resource">
+       <ul>
+        <a href = '/signup'>SIGN UP </a> <br> <br>
+        <a href='/login'>LOGIN</a> <br>
+        <!-- </ul>
+            {% for event in events %}
+            <li>{{ event.event }} - {{ event.date }}</li>
+            {% endfor %}
+        </ul> -->
+    </div>
+   
+    <div>
+     
+     <ul>
         {% endif %}
         <a href = "/logout"> LOGOUT</a>
-
+    </ul>
         
 
 
