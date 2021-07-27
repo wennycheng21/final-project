@@ -96,21 +96,22 @@ def signup():
         else:
             return "Unfortunately, the username is taken."
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-   if request.method == "GET":
-       return render_template("login.html")
-   else:
-       # this creates a user's database in mongo db if it doesn't already exist
- 
+    if request.method == "GET":
+        return render_template("login.html")
+    else:
+        # this creates a user's database in mongo db if it doesn't already exist
+
         users = mongo.db.users
- 
-         # this stores form data into a user's dictionary
+
+        # this stores form data into a user's dictionary
         user = {
             "username": request.form["username"],
             "password": request.form["password"]
-       }
- 
+        }
+
         # checks if user already exists in the database
         existing_user = users.find_one({'username': user['username']})
         # make condition to check if user already exists in mongo
@@ -120,13 +121,11 @@ def login():
                 session['username'] = user['username']
                 return redirect('/')
             else:
-                error = "Incorrect password. Plesse try again."
+                error = "Incorrect password. Please try again. If you haven't registered, please make an account."
                 return render_template('login.html', error=error)
-        else: 
-            return redirect('/signup.')
 
- 
- 
+        else:
+            return redirect('/signup.')
 
 
 @app.route('/logout')
