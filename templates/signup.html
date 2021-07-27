@@ -1,24 +1,25 @@
-
 <html>
-    <head>
-        <title>Homeless Resource Registeration </title>
-    </head>
-    <body>
-        <h1>Homeless Resource Sign Up</h1>
-        <form method="POST" action="/signup">
-            <label for="username">Username:</label>
-            <input type="text" name="username" value="">
-            <label for="password">Password</label>
-            <input type="text" name="password" value="">
-            
-            
-            <h1>Form</h1>
-            <p> Please fill out the form below.</p>
-        <label for="state">What state are you currently in?</label>
-          <select name="state" id="state">
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
+
+<head>
+    <title>Homeless Resource Registeration </title>
+</head>
+
+<body>
+    <h1>Homeless Resource Sign Up</h1>
+    <form method="POST" action="/signup">
+        <label for="username">Username:</label>
+        <input type="text" name="username" value="">
+        <label for="password">Password</label>
+        <input type="text" name="password" value="">
+
+
+        <h1>Form</h1>
+        <p> Please fill out the form below.</p>
+        <label for="city">Do you currently reside in Washington DC?</label>
+        <select name="reside" id="reside">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+            <!-- <option value="AZ">Arizona</option>
             <option value="AR">Arkansas</option>
             <option value="CA">California</option>
             <option value="CO">Colorado</option>
@@ -66,36 +67,48 @@
             <option value="WA">Washington</option>
             <option value="WV">West Virginia</option>
             <option value="WI">Wisconsin</option>
-            <option value="WY">Wyoming</option>
+            <option value="WY">Wyoming</option> -->
         </select><br> <br>
 
         <label for="age">Age</label>
-        <input type="text" id="age" name="age"><br><br>
-        
+        <br>
+        <input type="checkbox" id="age" name="age_17" value="11-17">
+        <label for="11-17">11-17</label> <br>
+        <input type="checkbox" id="age" name="age_24" value="18-24">
+        <label for="18-24">18-24</label> <br>
+        <input type="checkbox" id="age" name="age_18" value="18+">
+        <label for="18+">18+</label> <br>
+        <input type="checkbox" id="age" name="age_11" value="Under 11">
+        <label for="Under 11">Under 11</label> <br>
+
+        <br><br>
+
         <label for="gender">Gender</label>
         <br>
-         <input type="checkbox" id="gender" name="gender" value="male">
-        <label for="Male"> Male</label><br>
-        <input type="checkbox" id="gender" name="gender" value="female">
-        <label for="Female"> Female</label><br>
-        <input type="checkbox" id="gender" name="gender" value="other">
-        <label for="Other"> Other</label><br><br>
-    
-        <label for="type_assistance">What do you need assistance with?</label>        
+        <input type="checkbox" id="gender" name="men" value="men">
+        <label for="Men"> Men</label><br>
+        <input type="checkbox" id="gender" name="women" value="women">
+        <label for="women"> Women</label><br>
+        <input type="checkbox" id="gender" name="youth" value="youth">
+        <label for="Other"> Youth</label><br>
+        <input type="checkbox" id="gender" name="lgbtq" value="lgbtq">
+        <label for="lgbtq"> LGBTQ</label><br><br>
+
+        <label for="type_assistance">What do you need assistance with?</label>
         <select name="type_assistance" id="type_assistance">
             <option value="food">Food</option>
             <option value="shelter">Shelter</option>
             <option value="hygiene">Hygiene</option>
             <option value="job_assistance">Job assistance</option>
             <option value="transportation">Transportation</option>
-        </select> 
+        </select>
         <br><br>
 
         <label for="user_name">What is your name or nickname you like going by?</label>
         <input type="text" id="user_name" name="user_name"><br><br>
-       
-       <input type="submit" value="Submit">
-    </form>
-    </body>
-</html>
 
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

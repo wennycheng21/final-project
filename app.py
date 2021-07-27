@@ -81,7 +81,7 @@ def signup():
         user = {
             "username": request.form["username"],
             "password": request.form["password"],
-            "state": request.form["state"],
+            "reside": request.form["reside"],
             "age": request.form["age"],
             "gender": request.form["gender"],
             "type_assistance": request.form["type_assistance"]
