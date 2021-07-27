@@ -11,8 +11,6 @@ from model import getShelter
 import os
 
 
-
-
 # -- Initialization section --
 app = Flask(__name__)
 
@@ -64,24 +62,29 @@ def yourShelter():
     return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info)
 
 # login page
-@app.route('/form', methods = ['GET', 'POST'])
-def form():
-    return render_template("form.html")
-    
+# @app.route('/form', methods = ['GET', 'POST'])
+# def form():
+#     if request.method == "GET":
+#         return render_template("form.html")
+#     else:
+#         form = mongo.db.forms
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
-    else:
-        # this creates a user's database in mongo db if it doesn't already exist
-
-        users = mongo.db.users
 
         # this stores form data into a user's dictionary
+    else:
+        users = mongo.db.users
         user = {
             "username": request.form["username"],
-            "password": request.form["password"]
+            "password": request.form["password"],
+            "state": request.form["state"],
+            "age": request.form["age"],
+            "gender": request.form["gender"],
+            "type_assistance": request.form["type_assistance"]
         }
 
         # checks if user already exists in the database
@@ -94,7 +97,7 @@ def signup():
        # tell the browser session who the user is
             session["username"] = request.form["username"]
 
-            # return "Congratulations, you made an account: @ " + request.form["username"]
+            return "Congratulations, you made an account: @ " + request.form["username"]
             return render_template("index.html")
         else:
             return "Unfortunately, the username is taken."
