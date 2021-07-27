@@ -9,8 +9,8 @@ from flask import session
 from datetime import datetime
 from model import getShelter
 import os
-from model import getShelter
-from datetime import datetime
+
+
 
 
 # -- Initialization section --
@@ -64,7 +64,10 @@ def yourShelter():
     return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info)
 
 # login page
-
+@app.route('/form', methods = ['GET', 'POST'])
+def form():
+    return render_template("form.html")
+    
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
