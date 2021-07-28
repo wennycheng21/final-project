@@ -9,6 +9,7 @@ from flask import session
 from datetime import datetime
 from model import getShelter
 import os
+from model import womenShelter
 
 
 # -- Initialization section --
@@ -47,6 +48,8 @@ def index():
 def yourShelter():
     shelter_info = getShelter()
     print(shelter_info)
+    womenShelter_info = womenShelter()
+    print(womenShelter_info)
 
 
 
@@ -100,7 +103,7 @@ def signup():
             session["username"] = request.form["username"]
 
             return "Congratulations, you made an account: @" + request.form["username"]
-            return render_template('/')
+            # return render_template('/')
         else:
             return "Unfortunately, this username is taken. Please try again." + render_template('signup.html')
 
