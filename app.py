@@ -8,6 +8,7 @@ from flask import redirect
 from flask import session
 from datetime import datetime
 from model import getShelter
+# import requests
 import os
 from model import womenShelter
 
@@ -46,12 +47,24 @@ def index():
 
 @app.route('/yourShelter', methods=['GET', 'POST'])
 def yourShelter():
+    users = mongo.db.users
+
     shelter_info = getShelter()
-    print(shelter_info)
-    womenShelter_info = womenShelter()
+    # print(shelter_info)
+    womenShelter_info = womenShelter(users)
+
     print(womenShelter_info)
 
 
+# def womenShelter():
+#     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
+#     women = requests.get(shelter_request_link).json()
+#     if users.find({"gender": "Women"}) :
+#         return women['features'][0]['attributes']['ADDRESS']
+#         return women['features'][7]['attributes']['ADDRESS']
+#         return women['features'][9]['attributes']['ADDRESS']
+#         return women['features'][12]['attributes']['ADDDRESS']
+#         return women['features'][14]['attributes']['ADDRESS']
 
     # connect to the database
     # events = mongo.db.events
@@ -64,7 +77,7 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info)
+    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info, womenShelter_info = womenShelter_info)
 
 # login page
 # @app.route('/form', methods = ['GET', 'POST'])
@@ -136,7 +149,7 @@ def login():
                 return render_template('login.html', error=error)
 
         else:
-            return redirect('/signup.')
+            return redirect('/signup')
 
 
 @app.route('/logout')
