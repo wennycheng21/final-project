@@ -8,6 +8,10 @@ from flask import redirect
 from flask import session
 from datetime import datetime
 from model import getShelter
+from model import womenShelter
+from model import menShelter
+from model import youthShelter
+from model import lgbtqShelter
 from model import formResult
 
 # import requests
@@ -49,14 +53,41 @@ def index():
 
 @app.route('/yourShelter', methods=['GET', 'POST'])
 def yourShelter():
-    users = mongo.db.users
+    # users = mongo.db.users
 
     shelter_info = getShelter()
-    # print(shelter_info)
+    print(shelter_info)
+
+
+
+@app.route('/women', methods=['GET', 'POST'])
+def women():
+    users = mongo.db.users
     womenShelter_info = womenShelter(users)
-
     print(womenShelter_info)
+    return render_template('women18+.html', time=datetime.now(), womenShelter_info = womenShelter_info)
 
+
+@app.route('/men', methods=['GET', 'POST'])
+def men():
+    users = mongo.db.users
+    menShelter_info = menShelter(users)
+    print(menShelter_info)
+    return render_template('men18+.html', time=datetime.now(), menShelter_info = menShelter_info)
+
+@app.route('/youth', methods=['GET', 'POST'])
+def youth():
+    users = mongo.db.users
+    youthShelter_info = youthShelter(users)
+    print(youthShelter_info)
+    return render_template('youth.html', time=datetime.now(), youthShelter_info = youthShelter_info)
+
+@app.route('/lgbtq', methods=['GET', 'POST'])
+def lgbtq():
+    users = mongo.db.users
+    lgbtqShelter_info = lgbtqShelter(users)
+    print(lgbtqShelter_info)
+    return render_template('lgbtq.html', time=datetime.now(), lgbtqShelter_info = lgbtqShelter_info)
 
 # def womenShelter():
 #     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
@@ -79,7 +110,7 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info, womenShelter_info=womenShelter_info)
+    return render_template("shelter.html", time=datetime.now()) #shelter_info = shelter_info)
 
 
 @app.route('/resource', methods=['GET', 'POST'])

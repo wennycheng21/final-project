@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Personalized Gif</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
+    </head>
+    <body>
+        <h1>Your Shelter</h1>
+        <div>
+            hello test
+         {% for shelter in lgbtqShelter_info %} 
+           <h1> {{shelter}} </h1>
+            {% endfor %}
+    </div>
+        
+    </body>
+</html>
