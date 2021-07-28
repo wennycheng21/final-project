@@ -57,9 +57,6 @@ def yourShelter():
 
     print(womenShelter_info)
 
-    form_info = formResult(users)
-    print(form_info)
-
 
 # def womenShelter():
 #     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
@@ -82,8 +79,19 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info, womenShelter_info = womenShelter_info, form_info = form_info)
+    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info, womenShelter_info=womenShelter_info)
 
+
+@app.route('/resource', methods=['GET', 'POST'])
+def resource():
+    users = mongo.db.users
+   # form_info = formResult(users)
+   # print(form_info)
+    if users.find({"reside": "NO"}):
+        return render_template("resource.html", time=datetime.now())
+    else:
+        return redirect('/yourShelter')
+        # return render_template("resource.html", time=datetime.now())
 # login page
 # @app.route('/form', methods = ['GET', 'POST'])
 # def form():
