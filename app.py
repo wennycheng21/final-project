@@ -167,12 +167,13 @@ def signup():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    users = mongo.db.users
     if request.method == "GET":
         return render_template("login.html")
     else:
         # this creates a user's database in mongo db if it doesn't already exist
 
-        users = mongo.db.users
+       
 
         # this stores form data into a user's dictionary
         user = {
