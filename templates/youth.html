@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Your Personalized Gif</title>
-        <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
-    </head>
-    <body>
-        <h1>Your Shelter</h1>
-        <!-- <iframe src="{{shelter_info}}"></iframe> -->
-        <div>
+
+<head>
+    <title>Your Personalized Gif</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
+</head>
+
+<body>
+    <h1>Your Shelter</h1>
+    <!-- <iframe src="{{shelter_info}}"></iframe> -->
+    <div>
         <!-- <h1>{{womenShelter_info}}</h1> -->
-        <h1> {{youthShelter_info }} </h1>
+         {% for youth in youthShelter_info %}
+        <h1> {{youth}} </h1>
+        {% endfor %}
     </div>
-        <!-- <img src={{giph_link}}> -->
-        <!-- <iframe src="https://www.google.com/maps/embed?!6010 Georgia Ave., NW" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
-    </body>
+    <!-- <img src={{giph_link}}> -->
+    <!-- <iframe src="https://www.google.com/maps/embed?!6010 Georgia Ave., NW" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+</body>
+
 </html>
