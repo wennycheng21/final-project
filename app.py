@@ -59,13 +59,12 @@ def yourShelter():
     print(shelter_info)
 
 
-
 @app.route('/women', methods=['GET', 'POST'])
 def women():
     users = mongo.db.users
     womenShelter_info = womenShelter(users)
     print(womenShelter_info)
-    return render_template('women18+.html', time=datetime.now(), womenShelter_info = womenShelter_info)
+    return render_template('women18+.html', time=datetime.now(), womenShelter_info=womenShelter_info)
 
 
 @app.route('/men', methods=['GET', 'POST'])
@@ -73,21 +72,28 @@ def men():
     users = mongo.db.users
     menShelter_info = menShelter(users)
     print(menShelter_info)
-    return render_template('men18+.html', time=datetime.now(), menShelter_info = menShelter_info)
+    return render_template('men18+.html', time=datetime.now(), menShelter_info=menShelter_info)
+
 
 @app.route('/youth', methods=['GET', 'POST'])
 def youth():
     users = mongo.db.users
     youthShelter_info = youthShelter(users)
     print(youthShelter_info)
-    return render_template('youth.html', time=datetime.now(), youthShelter_info = youthShelter_info)
+    return render_template('youth.html', time=datetime.now(), youthShelter_info=youthShelter_info)
+
 
 @app.route('/lgbtq', methods=['GET', 'POST'])
 def lgbtq():
     users = mongo.db.users
     lgbtqShelter_info = lgbtqShelter(users)
     print(lgbtqShelter_info)
-    return render_template('lgbtq.html', time=datetime.now(), lgbtqShelter_info = lgbtqShelter_info)
+    return render_template('lgbtq.html', time=datetime.now(), lgbtqShelter_info=lgbtqShelter_info)
+
+
+@app.route('/donatevolunteer', methods=['GET', 'POST'])
+def donatevolunteer():
+    return render_template('donatevolunteer.html', time=datetime.now())
 
 # def womenShelter():
 #     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
@@ -152,15 +158,32 @@ def signup():
 
         # checks if user already exists in the database
         existing_user = users.find_one({'username': user['username']})
-
+        user_age = request.form["age"]
         # make condition to check if user already exists in mongo
         if existing_user is None:
             users.insert(user)  # add our user data into mongo
 
        # tell the browser session who the user is
             session["username"] = request.form["username"]
+            # if existing_age == "11-17":
+            #     return redirect ('/youth')
 
-            return "Congratulations, you made an account: @" + request.form["username"]
+            # elif existing_age == "Under 11":
+            #     return redirect ('/resource')
+
+            # elif existing_age == "18+":
+            #     return render_template("women.html")
+
+            #return "Congratulations, you made an account: @" + request.form["username"]
+            # if user_age == "11-17":
+            #     return redirect ('/youth')
+
+            # elif user_age == "Under 11":
+            #     return render_template("resource.html")
+
+            # else:
+            #     return render_template("women18+.html")
+
             # return render_template('/')
         else:
             return "Unfortunately, this username is taken. Please try again." + render_template('signup.html')
@@ -173,8 +196,6 @@ def login():
         return render_template("login.html")
     else:
         # this creates a user's database in mongo db if it doesn't already exist
-
-       
 
         # this stores form data into a user's dictionary
         user = {
