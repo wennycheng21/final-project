@@ -13,6 +13,7 @@ from model import menShelter
 from model import youthShelter
 from model import lgbtqShelter
 from model import formResult
+import random 
 
 # import requests
 import os
@@ -33,6 +34,8 @@ app.config['MONGO_URI'] = 'mongodb+srv://admin:' + uri_password + \
     '@cluster0.lndrp.mongodb.net/database?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
+
+id_number = random.randrange(1000, 9999)
 
 
 # URI of database
@@ -152,7 +155,8 @@ def resource():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == "GET":
-        return render_template("signup.html")
+        message = "Your ID will be DC" + str(id_number)
+        return render_template("signup.html", message = message)
 
         # this stores form data into a user's dictionary
     else:
