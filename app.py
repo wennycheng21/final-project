@@ -173,14 +173,24 @@ def signup():
        # tell the browser session who the user is
             session["username"] = request.form["username"]
             
-            if user_age == "11-17":
+            if user_reside == "NO" and user_age == "11-17":
+                return redirect('/resource')
+            elif user_age == "11-17" and user_reside == "YES":
                 return redirect ('/youth')
             elif user_age == "Under 11":
                 return redirect ('/resource')
+            elif user_age == "18+" and user_gender == "Female" and user_reside == "NO":
+                return redirect('/resource')
+            elif user_age == "18+" and user_gender == "Male" and user_reside == "NO":
+                return redirect('/resource')
             elif user_age == "18+" and user_gender == "Female":
                 return redirect('/women')
             elif user_age == "18+" and user_gender == "Male":
                 return redirect('/men')
+            elif user_age == "18+" and user_gender == "lgbtq":
+                return redirect('/lgbtq')
+            elif user_age == "18+" and user_gender == "lgbtq" and user_reside == "NO":
+                return redirect('/resource')
             
             # elif user_age == "Under 11" and user_reside == "Yes" :
             #     return redirect ('/resource')
