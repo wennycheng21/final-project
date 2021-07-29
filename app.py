@@ -58,6 +58,8 @@ def yourShelter():
     shelter_info = getShelter()
     print(shelter_info)
 
+    return render_template('shelter.html', time=datetime.now(), shelter_info = shelter_info)
+
 
 @app.route('/women', methods=['GET', 'POST'])
 def women():
@@ -128,7 +130,7 @@ def resource():
 
     if users.find({"age": "Under 11"}):
         return render_template("resource.html", time=datetime.now())
-    elif users.find({"reside": "NO"}):
+    elif users.find({"reside": "No"}):
         return render_template("resource.html", time=datetime.now())
     else:
         return redirect('/yourShelter')
@@ -163,23 +165,49 @@ def signup():
         existing_user = users.find_one({'username': user['username']})
         user_age = request.form["age"]
         user_gender = request.form["gender"]
+        user_reside = request.form["reside"]
         # make condition to check if user already exists in mongo
         if existing_user is None:
             users.insert(user)  # add our user data into mongo
 
        # tell the browser session who the user is
             session["username"] = request.form["username"]
+            
             if user_age == "11-17":
                 return redirect ('/youth')
-
             elif user_age == "Under 11":
                 return redirect ('/resource')
-
-            elif user_age == "18+" and user_gender == "Women":
+            elif user_age == "18+" and user_gender == "Female":
                 return redirect('/women')
-            
-            elif user_age == "18+" and user_gender == "Men":
+            elif user_age == "18+" and user_gender == "Male":
                 return redirect('/men')
+            
+            # elif user_age == "Under 11" and user_reside == "Yes" :
+            #     return redirect ('/resource')
+            # elif user_age == "Under 11" and user_reside == "No" :
+            #     return redirect ('/resource')
+            # elif user_age == "11-17" and user_reside == "No" :
+            #     return redirect ('/resource')
+            # elif user_age == "11-17" and user_reside == "Yes":
+            #     return redirect ('/youth')
+
+            # elif user_reside == "No" :
+            #     return redirect ('/resource')
+
+            # elif user_age == "18+" and user_gender == "Women" and user_reside == "No":
+            #     return redirect('/resource')
+            
+            # elif user_gender == "Women" and user_reside == "No":
+            #     return redirect('/women')
+            
+            # elif user_gender == "Men":
+            #     return redirect('/men')
+
+            # elif user_gender == "lgbtq":
+            #     return redirect('/lgbtq')
+
+            # elif user_age == "18+" and user_gender == "Men" and user_reside == "No":
+            #     return redirect('/resource')
 
             #return "Congratulations, you made an account: @" + request.form["username"]
             # if user_age == "11-17":
