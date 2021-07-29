@@ -46,7 +46,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', time=datetime.now())
+    return render_template('index_copy.html', time=datetime.now())
 
 
 # CONNECT TO DB, ADD DATA
@@ -110,7 +110,8 @@ def lgbtq():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html", time=datetime.now()) #shelter_info = shelter_info)
+    # Ro uncommented this because she was not sure what it did and it brought up an error.
+    # return render_template("shelter.html", time=datetime.now()) #shelter_info = shelter_info)
 
 
 @app.route('/resource', methods=['GET', 'POST'])
