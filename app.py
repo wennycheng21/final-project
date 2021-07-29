@@ -125,7 +125,10 @@ def resource():
     users = mongo.db.users
    # form_info = formResult(users)
    # print(form_info)
-    if users.find({"reside": "NO"}):
+
+    if users.find({"age": "Under 11"}):
+        return render_template("resource.html", time=datetime.now())
+    elif users.find({"reside": "NO"}):
         return render_template("resource.html", time=datetime.now())
     else:
         return redirect('/yourShelter')

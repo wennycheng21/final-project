@@ -35,17 +35,21 @@ body{
 }
 
 
-.nav{
+#nav{
   top:0;
   left:0;
   width:100%;
   box-sizing:border-box;
-  transition:.5s;
+  /* transition:.5s; */
   position: fixed;
+  /* positions:  */
 }
 
-#navbar{
-    transition: top 0.4s;
+.navbar{
+    /* transition: top 0.4s; */
+    position: fixed;
+    padding-bottom: 50px;
+    background-color: white;
 
 }
 
@@ -109,7 +113,7 @@ body{
 }
 
 .home{
-    /* margin-top:5rem;  */
+    margin-top:5rem; 
     background: url(https://gp1.com/wp-content/uploads/2018/04/Homeless.jpg) no-repeat center center fixed ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -624,4 +628,8 @@ footer img{
 #myDIV{
   color: #C087E6;
   font-family: 'Lato', sans-serif;
+}
+
+.formtext{
+    text-align: center;
 }
