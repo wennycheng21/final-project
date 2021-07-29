@@ -1,0 +1,627 @@
+.carousel-item{
+  color:  #C087E6;
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  padding-left:10rem;
+   padding-right:10rem
+}
+
+.carousel-control-prev{
+  position: relative;
+  left: 0;
+  transition: top ease 3s;
+} 
+
+.carousel-control-prev:hover{
+ left: -10px;
+}
+
+
+.carousel-control-next{
+  position: relative;
+  right: 0;
+  transition: top ease 3s;
+} 
+
+.carousel-control-next:hover{
+ right: -10px;
+}
+
+
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.nav{
+  top:0;
+  left:0;
+  width:100%;
+  box-sizing:border-box;
+  transition:.5s;
+  position: fixed;
+}
+
+#navbar{
+    transition: top 0.4s;
+
+}
+
+
+.btn1{
+  float:left;
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+  color:#C087E6;
+  text-transform: uppercase;
+  font-weight: blod;
+  font-size: 1rem; 
+  border: none;
+  padding-top:1rem;
+  padding-right:1rem;
+  padding-left:1rem;
+}
+
+.navbar-brand{
+  border-right: 1px solid #C087E6;
+  padding-right:1rem;
+}
+.navbar-nav{
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: blod;
+  font-size: 1rem;
+  border: none;
+  padding-right:1rem;
+  padding-left:1rem;
+}
+
+.nav-link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.dropdown-menu a{
+  color:white;
+  padding: 10px 0 0 0;
+
+}
+
+.home{
+    /* margin-top:5rem;  */
+    background: url(https://gp1.com/wp-content/uploads/2018/04/Homeless.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* -moz-box-shadow:    inset  10px -10px 300px 100px #C087E6;
+    -webkit-box-shadow: inset  10px -10px 300px 100px #C087E6;
+     box-shadow:        inset  10px -10px 300px 100px #C087E6; */
+     padding-bottom:8rem;
+           
+}
+ 
+#ad{
+  background-color:#C087E6;
+  height:5rem;
+  color:white;
+  font-family: 'Lato', sans-serif;
+}
+
+@media screen and (max-width: 830px) {
+  #ad {
+    display:none;
+  }
+
+  .opening h1{
+   font-size: small;
+  }
+
+  .info svg{
+     display:none;
+  }
+
+  .h3tag{
+    margin-top:7rem;
+  }
+
+  #donation{
+     display:none;
+  }
+
+ 
+}
+
+
+@media screen and (max-width: 400px) {
+  
+  .ptag{
+    padding-bottom:1rem;
+  }
+
+ 
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  
+  .help{
+    display:none;
+  }
+
+ 
+}
+
+@media screen and (max-width: 800px) {
+  
+  .info svg{
+     display:none;
+  }
+
+ 
+}
+
+.opening h1{
+  font-family: 'Lato', sans-serif;
+  color:white;
+  font-size:5rem;
+  margin-top:12rem;
+  text-shadow: 1px 1px black;
+}
+
+.info{
+  background-color:#C087E6;
+   /* -moz-box-shadow:    inset  10px -10px 300px 100px #C087E6;
+   -webkit-box-shadow: inset  10px -10px 300px 100px #C087E6;
+   box-shadow:  inset  10px -10px 300px 100px #C087E6; */
+  padding-bottom:10rem;
+}
+
+.ptag{
+  color:white;
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  float:left;
+}
+
+.h3tag{
+  color: #f2cd68;
+  font-size:3rem;
+  font-family: 'Lato', sans-serif;
+  float:left;
+}
+
+.gif{
+    display: inline-block;
+    vertical-align: middle;
+    width: 95%;
+    height: 100%;
+ 
+}
+
+.h1tag2{
+  font-family: 'Lato', sans-serif;
+  color:#01cbe1;
+  font-size:3rem;
+}
+
+/* problem */ 
+
+
+/* .left{
+   height:100vh;
+   color:white;
+   box-shadow: 0 200px 300px 0 rgba(0, 0, 0, 0.2), 0 200px 10px 0 rgba(0, 0, 0, 0.19);
+   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1538208282481-ef3bf95386eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=722&q=80');
+    background-size:cover;
+    width:50%;
+    font-family: 'Lato', sans-serif;
+    font-size:1.2rem;
+    text-shadow: 2px 2px 4px #000000;
+} */
+
+
+/* .right{
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1568358278839-29bbf0089875?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+   height:100vh;
+   color:white;
+   box-shadow: 0 200px 300px 0 rgba(0, 0, 0, 0.2), 0 200px 10px 0 rgba(0, 0, 0, 0.19);
+   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+   background-size:cover;
+   width: 50%;
+   font-family: 'Lato', sans-serif;
+   font-size:1.2rem;
+   text-shadow: 2px 2px 4px #000000;
+
+} */
+
+
+
+.btn{
+  font-size:1.5rem !important;
+  background-color:#01cbe1 !important;
+  color:white !important;
+  border-color: #01cbe1!important;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  float:center;
+  transform: uppercase;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  border-radius: 0px !important;
+}
+
+.btn:hover{
+   opacity: 0.9;
+}
+
+
+/* news */ 
+.h3tag2{
+  padding-top:5rem;
+  text-shadow: rgba(0,0,0,.5) 0 1px 1px;
+  font-family: 'Lato', sans-serif;
+}
+
+.newslink{
+  color: #fff;
+  text-shadow: rgba(0,0,0,.5) 0 1px 1px;
+  font-size:2rem;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.newslink:hover{
+   text-decoration: underline;
+   color:white;
+}
+
+
+.newslink img:hover{
+  transform: rotate(45deg);
+}
+
+.newsbackground1{
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/b814d7de-4926-4955-b8b0-a46c58b06296/fx1.jpg);
+  border-radius:10px;color:white;background-size:cover;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.newsbackground2{
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://eponline.com/articles/2020/08/10/-/media/ENV/eponline/Images/2020/08/OHSimageAS137.jpg);
+  border-radius:10px;color:white;background-size:cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.newsbackground3{
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.sciencemag.org/sites/default/files/styles/article_main_image_-_1280w__no_aspect_/public/ca_0724NID_Earth_online.jpg?itok=glL-Bgbs);
+  border-radius:10px;color:white;background-size:cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* news hover effects*/ 
+.newsbackground1:hover{
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/b814d7de-4926-4955-b8b0-a46c58b06296/fx1.jpg);
+  border-radius:10px;color:white;background-size:cover;
+}
+
+.newsbackground2:hover{
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://eponline.com/articles/2020/08/10/-/media/ENV/eponline/Images/2020/08/OHSimageAS137.jpg);
+  border-radius:10px;color:white;background-size:cover;
+}
+
+.newsbackground3:hover{
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://www.sciencemag.org/sites/default/files/styles/article_main_image_-_1280w__no_aspect_/public/ca_0724NID_Earth_online.jpg?itok=glL-Bgbs);
+  border-radius:10px;color:white;background-size:cover;
+}
+
+
+/* TEAM*/ 
+.team{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.team h1{
+  font-size:4rem;
+  color:#ffffff;
+  margin-top:4rem;
+   font-family: 'Lato', sans-serif;
+}
+
+
+.team2 img:hover{
+      opacity: 0.7;
+}
+
+.team2 img{
+  cursor: pointer;
+}
+
+
+/* footer*/ 
+footer{
+  color:white;
+  font-family: 'Lato', sans-serif;
+  padding-top:3rem;
+}
+
+.btn2{
+  background-color:#01cbe1 !important;
+  padding-left:2rem;
+  padding-right:2rem;
+  border-color: #01cbe1!important;
+}
+
+.btn2:hover{
+  opacity: 0.8;
+}
+
+footer a{
+  color:white;
+}
+
+footer a:hover{
+  color:white;
+  text-decoration: underline;
+}
+
+footer img:hover{
+      opacity: 0.7;
+}
+
+footer img{
+  cursor: pointer;
+}
+
+
+/* DONATION */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, #C087E6 50%, #04927af5  50%);
+  overflow-x: hidden; 
+  transition: 0.5s; 
+  color:white;
+}
+
+
+.overlay-content {
+  position: relative;
+  top: 20%; 
+  width: 100%; 
+}
+
+
+.overlay .closebtn {
+  position: absolute;
+  top: 60px;
+  right: 45px;
+  font-size: 60px;
+  color:white;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.donate1{
+  cursor: pointer;
+  background-color: #C087E6;
+  color: white;
+  font-size: 2rem;
+  border-color: #ffffff;
+  /* margin-bottom: 0.5rem; */
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+
+/* probelms */
+.home2{
+     margin-top:5rem;
+    background: url(https://connectforwater.org/wp-content/uploads/sites/2/2018/06/shutterstock_556842991.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -moz-box-shadow:    inset  10px -10px 300px 100px #C087E6;
+    -webkit-box-shadow: inset  10px -10px 300px 100px #C087E6;
+     box-shadow:        inset  10px -10px 300px 100px #C087E6;
+     padding-bottom:15rem;
+}
+
+
+.info2{
+  background-color:#C087E6;
+   -moz-box-shadow:    inset  10px -10px 300px 100px #C087E6;
+   -webkit-box-shadow: inset  10px -10px 300px 100px #C087E6;
+   box-shadow:  inset  10px -10px 300px 100px #C087E6;
+  
+}
+
+/* problem effects */
+
+.effects{
+  background-color: white;
+}
+
+
+.h3tag3{
+  color: #C087E6;
+  font-size:3rem;
+  font-family: 'Lato', sans-serif;
+  float:left;
+}
+
+
+.ptag2{
+  color:  #C087E6;
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  float:left;
+}
+
+.pop{
+
+  background-color:#C087E6;
+   -moz-box-shadow:    inset  10px -10px 300px 100px #C087E6;
+   -webkit-box-shadow: inset  10px -10px 300px 100px #C087E6;
+   box-shadow:  inset  10px -10px 300px 100px #C087E6;
+}
+
+
+.h3tag4{
+  color: #01cbe1;
+  font-size:3rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.pop img:hover{
+
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+          
+}
+
+
+/* problem how to help sec */
+
+.howtohelp{
+  background-color: white;
+  padding-top:2rem;
+  color:#C087E6 
+}
+
+#help4 button{
+      text-decoration: none;
+      color:#C087E6;
+      border-color: #C087E6;
+      background-color:white;
+      padding-left:1rem;
+      padding-right:1rem;
+      padding-top:0.5rem;
+      padding-bottom:0.5rem;
+      font-size:2rem;
+      border-width: 0.1rem;
+      transition:  0.5s;
+}
+
+
+#help4 button:hover{
+      text-decoration: none;
+      color:white;
+      border-color: #C087E6;
+      background-color:#C087E6;
+      padding-left:1rem;
+      padding-right:1rem;
+      padding-top:0.5rem;
+      padding-bottom:0.5rem;
+      font-size:2rem;
+      border-width: 0.1rem;
+}
+
+
+/* donation button */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content2 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* The fixed page Button */
+.home3{
+     height:90vh;
+     margin-top:5rem;
+    background: url(https://www.wlrn.org/sites/wlrn/files/styles/x_large/public/201904/IMG_6905.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -moz-box-shadow:    inset  10px -10px 300px 10px #C087E6;
+    -webkit-box-shadow: inset  10px -10px 300px 10px #C087E6;
+     box-shadow:        inset  10px -10px 300px 10px #C087E6;
+}
+
+#myDIV img{
+  cursor:pointer;
+}
+
+#myDIV{
+  color: #C087E6;
+  font-family: 'Lato', sans-serif;
+}

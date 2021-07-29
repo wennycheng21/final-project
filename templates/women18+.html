@@ -6,16 +6,18 @@
     </head>
     <body>
         <h1>Your Shelter</h1>
-        <h3>You requested a santuary</h3>
         <!-- <iframe src="{{shelter_info}}"></iframe> -->
         <div>
-<<<<<<< HEAD
-        <p>{{womenShelter_info}}</p>
-        <p> {{form_info }} </p>
-=======
+        <h2> Homeless Resources for Women</h2>
+            <h4>Thank you so much for using Your Shelter! Below are shelters near you!</h4> 
         <!-- <h1>{{womenShelter_info}}</h1> -->
-        <h1> {{form_info }} </h1>
->>>>>>> b067f945cbed800ee768c409982ca5d124b47946
+        {% for women in womenShelter_info %}
+        <p> {{women}} </p>
+        {% endfor %}
+        <br>
+        <a href = "/index"> Home </a>
+        <br> <br>
+        <a href = "/logout"> Logout </a>
     </div>
         <!-- <img src={{giph_link}}> -->
         <!-- <iframe src="https://www.google.com/maps/embed?!6010 Georgia Ave., NW" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->

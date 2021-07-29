@@ -8,6 +8,10 @@ from flask import redirect
 from flask import session
 from datetime import datetime
 from model import getShelter
+from model import womenShelter
+from model import menShelter
+from model import youthShelter
+from model import lgbtqShelter
 from model import formResult
 
 # import requests
@@ -42,24 +46,48 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', time=datetime.now())
+    return render_template('index_copy.html', time=datetime.now())
 
 
 # CONNECT TO DB, ADD DATA
 
 @app.route('/yourShelter', methods=['GET', 'POST'])
 def yourShelter():
-    users = mongo.db.users
+    # users = mongo.db.users
 
     shelter_info = getShelter()
-    # print(shelter_info)
+    print(shelter_info)
+
+
+
+@app.route('/women', methods=['GET', 'POST'])
+def women():
+    users = mongo.db.users
     womenShelter_info = womenShelter(users)
-
     print(womenShelter_info)
+    return render_template('women18+.html', time=datetime.now(), womenShelter_info = womenShelter_info)
 
-    form_info = formResult(users)
-    print(form_info)
 
+@app.route('/men', methods=['GET', 'POST'])
+def men():
+    users = mongo.db.users
+    menShelter_info = menShelter(users)
+    print(menShelter_info)
+    return render_template('men18+.html', time=datetime.now(), menShelter_info = menShelter_info)
+
+@app.route('/youth', methods=['GET', 'POST'])
+def youth():
+    users = mongo.db.users
+    youthShelter_info = youthShelter(users)
+    print(youthShelter_info)
+    return render_template('youth.html', time=datetime.now(), youthShelter_info = youthShelter_info)
+
+@app.route('/lgbtq', methods=['GET', 'POST'])
+def lgbtq():
+    users = mongo.db.users
+    lgbtqShelter_info = lgbtqShelter(users)
+    print(lgbtqShelter_info)
+    return render_template('lgbtq.html', time=datetime.now(), lgbtqShelter_info = lgbtqShelter_info)
 
 # def womenShelter():
 #     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
@@ -82,8 +110,20 @@ def yourShelter():
     # "date": "2003-04-24"})
 
     # return a message to the user
-    return render_template("shelter.html", time=datetime.now(), shelter_info=shelter_info, womenShelter_info = womenShelter_info, form_info = form_info)
+    # Ro uncommented this because she was not sure what it did and it brought up an error.
+    # return render_template("shelter.html", time=datetime.now()) #shelter_info = shelter_info)
 
+
+@app.route('/resource', methods=['GET', 'POST'])
+def resource():
+    users = mongo.db.users
+   # form_info = formResult(users)
+   # print(form_info)
+    if users.find({"reside": "NO"}):
+        return render_template("resource.html", time=datetime.now())
+    else:
+        return redirect('/yourShelter')
+        # return render_template("resource.html", time=datetime.now())
 # login page
 # @app.route('/form', methods = ['GET', 'POST'])
 # def form():
@@ -128,12 +168,13 @@ def signup():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    users = mongo.db.users
     if request.method == "GET":
         return render_template("login.html")
     else:
         # this creates a user's database in mongo db if it doesn't already exist
 
-        users = mongo.db.users
+       
 
         # this stores form data into a user's dictionary
         user = {
