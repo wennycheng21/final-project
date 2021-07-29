@@ -159,20 +159,24 @@ def signup():
         # checks if user already exists in the database
         existing_user = users.find_one({'username': user['username']})
         user_age = request.form["age"]
+        user_gender = request.form["gender"]
         # make condition to check if user already exists in mongo
         if existing_user is None:
             users.insert(user)  # add our user data into mongo
 
        # tell the browser session who the user is
             session["username"] = request.form["username"]
-            # if existing_age == "11-17":
-            #     return redirect ('/youth')
+            if user_age == "11-17":
+                return redirect ('/youth')
 
-            # elif existing_age == "Under 11":
-            #     return redirect ('/resource')
+            elif user_age == "Under 11":
+                return redirect ('/resource')
 
-            # elif existing_age == "18+":
-            #     return render_template("women.html")
+            elif user_age == "18+" and user_gender == "Women":
+                return redirect('/women')
+            
+            elif user_age == "18+" and user_gender == "Men":
+                return redirect('/men')
 
             #return "Congratulations, you made an account: @" + request.form["username"]
             # if user_age == "11-17":
