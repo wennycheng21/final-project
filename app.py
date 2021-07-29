@@ -224,3 +224,8 @@ def logout():
     # removes session
     session.clear()
     return redirect('/')
+
+@app.route('/locations/table')
+def locations():
+    return render_template('locations_table.html')
+
