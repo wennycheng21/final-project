@@ -222,14 +222,14 @@ body{
 }
 
 .ptag{
-  color:black;
+  color:#313332;
   font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
   float:left;
 }
 
 .h3tag{
-  color: black;
+  color: #313332;
   font-size:3rem;
   font-family: 'Lato', sans-serif;
   float:left;
