@@ -9,21 +9,25 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1cfd2837ce.js" crossorigin="anonymous"></script>
-    
+
 </head>
 
 <body>
-    <!-- things i need to add
-    - make the navbar stick
-    put a stick button that can return you back to the top
-     -->
+    <!-- things i need to do 
+    no back to top button
+    not yet bring Idania's code in here
+    not yet add pic to news
+    not yet link footer
+    not yet transfer nav and footer to other pages
+    fix login page with bootstrap
+    make get help pages look better
+    embed map -->
 
-    <!-- <nav class="sticky nav nav-link navbar navbar-expand-lg" id="nav navbar"> -->
     <nav class="sticky navbar navbar-expand-lg navbar-light" id="nav">
         <div class="container-fluid">
             <i class="fas fa-hand-holding-heart"></i>
-            
-            <a class="navbar-brand" href="#">YOUR SHELTER</a>
+
+            <a class="navbar-brand" href="/index">YOUR SHELTER</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,23 +35,24 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Maps</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="/donatevolunteer">Volunteer</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
+                            Get Help
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="/youth">Youth</a></li>
+                            <li><a class="dropdown-item" href="/women">Women</a></li>
+                            <li><a class="dropdown-item" href="/men">Men</a></li>
+                            <li><a class="dropdown-item" href="/lgbtq">LGBTQ</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,8 +79,11 @@
             <div class="col-lg-12 text-center pt-3">
                 <!-- donate button -->
                 <!-- <span class="donate1" onclick="openNav()"><h1>DONATE<img src="img/make-a-donation.svg"style="height:2rem;margin-bottom:0.7rem;"></h1></span> -->
-                <button type="submit" class="donate1" id="" data-toggle="modal"
-                    data-target="#exampleModalCenter">DONATE<i class="fas fa-donate"></i></button>
+                <!-- <button type="submit" class="donate1" id="" data-toggle="modal"
+                    data-target="#exampleModalCenter">DONATE<i class="fas fa-donate"></i></button>  -->
+                <a href='/donatevolunteer'><button type="submit" class="donate1" id="">DONATE<i
+                            class="fas fa-donate"></i></button></a>
+
             </div>
 
 
@@ -85,9 +93,12 @@
             <div class="opening col-lg-12 pl-5">
                 <!-- syntax for checking if a session was started -->
                 {% if session %}
-                <h1 id="test">Hi {{  session["username"] }}! <br> Welcome to Homeless Resources!</h1>
+                <h1 id="test">Hi {{  session["username"] }}! <br> Welcome to Your Shelter!</h1>
+                {% else %}
+                <h1 id="test">
+                    <br>
+                </h1>
                 {% endif %}
-
             </div>
         </div>
     </div>
@@ -96,22 +107,19 @@
     <div class="info container-fuild" id="about">
         <div class="row" style="right:0">
             <div class="col-md-6 pt-5 pl-5 pr-5">
-                <hr style="height:0.1rem;background-color:#f2cd68;width:50%" align="left">
+                <hr style="height:0.1rem;background-color:#0f0f0f;width:50%" align="left">
                 <h3 class="h3tag">OUR MISSION</h3>
                 <p class="ptag">
-                    Our mission is to keep our oceans as clean as possible by creating solutions to current pollution
-                    issues and spreading awareness of oceanic issues. We hope to create healthy, rich and biodiverse
-                    oceans for future generations to enjoy.
-                    Our company focuses on saving the ocean and to make sure that the environment is back to how it was
-                    years ago but we can’t do it if not everyone is involved and helping out. There are many things that
-                    we can do and there are many things that makes us all different but one of the many things that
-                    unites us is our ocean, our world and our environment. Let’s work together to make sure that we
-                    protect what is ours.
+                    No matter what project we build, we all decided we wanted to give back to our communities and make
+                    an impact. Your Shelter hopes to make it more accessible for the homeless to find homeless shelters
+                    near them and get assistance for their needs. Your Shelter also provides a platform that enables
+                    volunteers to donate and register to programs to assist the homeless.
                 </p>
 
             </div>
             <div class=" col-md-6 text-center" style="padding-top:5rem;">
-                <img src="https://catherinehouse.org.au/wp-content/uploads/2020/01/Feedback_purple_transparent-e1578977354279.png">
+                <img
+                    src="https://catherinehouse.org.au/wp-content/uploads/2020/01/Feedback_purple_transparent-e1578977354279.png">
             </div>
         </div>
     </div>
@@ -220,7 +228,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Your email address">
                         <div class="input-group-append">
-                            <button type="submit" class="btn2 btn-primary" id="myBtn" data-toggle="modal"
+                            <button type="submit" class="top-btn" id="myBtn" data-toggle="modal"
                                 data-target="#exampleModalCenter">Submit</button>
 
                             <!-- Modal -->
@@ -260,7 +268,8 @@
                             <h5 class="mt-3">Ocean Purity<br>
                                 Po Box 1456<br>
                                 Washington, D.C.<br> United States<br></h5>
-                            <h5>Oceanpurity@gmail.com<br>
+                                <a href = "mailto: yourshelteresource@gmail.com">yourshelteresource@gmail.com</a>
+                                <br>
                                 (523) 234-2546</h5>
 
                 </div>
@@ -314,56 +323,25 @@
         </div>
 
     </footer>
-    <form class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4">
-  </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="col-12">
-    <label for="inputAddress2" class="form-label">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="col-md-6">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity">
-  </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </div>
-</form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+   
 
 </body>
 

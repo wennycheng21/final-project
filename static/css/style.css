@@ -39,6 +39,7 @@ body{
   top:0;
   left:0;
   width:100%;
+  height:15%;
   box-sizing:border-box;
   /* transition:.5s; */
   position: fixed;
@@ -107,15 +108,17 @@ body{
 }
 
 .dropdown-menu a{
-  color:white;
+  color:black;
   padding: 10px 0 0 0;
+  background-color: #C087E6 !important;
 
 }
 
+/* come back here */
 .home{
     margin-top:5rem; 
     background: url(https://gp1.com/wp-content/uploads/2018/04/Homeless.jpg) no-repeat center center fixed ;
-    -webkit-background-size: cover;
+    /* -webkit-background-size: cover; */
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -124,6 +127,21 @@ body{
      box-shadow:        inset  10px -10px 300px 100px #C087E6; */
      padding-bottom:8rem;
            
+}
+.shelter-home{
+    margin-top:5rem; 
+    padding-bottom:8rem;
+    /* background-color: #aaaaaa; */
+    text-align: center;
+}
+
+.youthinfo{
+    text-align: center;   
+    margin-top: 10rem;
+    
+}
+.much{
+    background-color:#C087E6 !important;
 }
  
 #ad{
@@ -204,14 +222,14 @@ body{
 }
 
 .ptag{
-  color:white;
+  color:black;
   font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
   float:left;
 }
 
 .h3tag{
-  color: #f2cd68;
+  color: black;
   font-size:3rem;
   font-family: 'Lato', sans-serif;
   float:left;
@@ -227,7 +245,7 @@ body{
 
 .h1tag2{
   font-family: 'Lato', sans-serif;
-  color:#01cbe1;
+  color:black;
   font-size:3rem;
 }
 
@@ -266,9 +284,9 @@ body{
 
 .btn{
   font-size:1.5rem !important;
-  background-color:#01cbe1 !important;
+  background-color:#f2cd68 !important;
   color:white !important;
-  border-color: #01cbe1!important;
+  border-color: #f2cd68!important;
   padding-top:0.5rem;
   padding-bottom:0.5rem;
   padding-right: 1rem;
@@ -384,10 +402,10 @@ footer{
 }
 
 .btn2{
-  background-color:#01cbe1 !important;
+  background-color:#f2cd68 !important;
   padding-left:2rem;
   padding-right:2rem;
-  border-color: #01cbe1!important;
+  border-color: #f2cd68!important;
 }
 
 .btn2:hover{
@@ -461,6 +479,26 @@ footer img{
   }
 }
 
+.top-btn{
+    border-radius: 30px;
+    border-color: #000 !important;
+    color: black !important;
+    /* font-family: 'brandon_grotesquebold', 'Helvetica', Arial, sans-serif; */
+    font-size: 20px;
+    background-color: #C087E6 !important;
+    color: #fff;
+    /* display: flex; */
+    align-items: center;
+    /* height: 48px; */
+    /* line-height: 1; */
+    /* padding: 0 15px; */
+
+}
+.top-btn:hover{
+  /* opacity: 0; */
+  background-color:white !important;
+}
+
 
 /* probelms */
 .home2{
@@ -517,7 +555,7 @@ footer img{
 
 
 .h3tag4{
-  color: #01cbe1;
+  color: black;
   font-size:3rem;
   font-family: 'Lato', sans-serif;
 }
@@ -631,5 +669,11 @@ footer img{
 }
 
 .formtext{
+    text-align: center;
+}
+
+.loginbutton{
+    padding-right: 30px;
+    padding-left: 30px;
     text-align: center;
 }
