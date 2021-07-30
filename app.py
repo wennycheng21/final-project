@@ -1,4 +1,3 @@
-
 # -- Import section --
 from flask import Flask
 from flask import render_template
@@ -100,6 +99,9 @@ def lgbtq():
 def donatevolunteer():
     return render_template('donatevolunteer.html', time=datetime.now())
 
+@app.route('/map', methods=['GET', 'POST'])
+def map():
+    return render_template('map.html', time=datetime.now())
 
 @app.route('/transportation', methods=['GET', 'POST'])
 def transportation():
@@ -282,4 +284,8 @@ def logout():
 @app.route('/locations/table')
 def locations():
     return render_template('locations_table.html')
+
+
+
+
 

@@ -26,7 +26,7 @@
                         <a class="nav-link active" aria-current="page" href="/index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/map">Maps</a>
+                        <a class="nav-link" href="#">Maps</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/donatevolunteer">Volunteer</a>
@@ -60,16 +60,6 @@
     </nav>
 
 
-
-
-
-
-
-
-
-
-
-
     <div class="shelter-home">
 
         <div class="row" id="ad">
@@ -87,68 +77,18 @@
 
 
         <div class="youthinfo">
-            <h2> Homeless Shelters for Men </h2>
-            <h4>Thank you so much for using Your Shelter! Below are shelters for you!</h4>
+            <h2> MAP </h2>
             <!-- <h1>{{womenShelter_info}}</h1> -->
 
             <center>
-                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                    <div class="much">
-                        <div class="card-header">Shelter Location</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Available at:</h5>
-                            <p class="card-text">
-                                {% for men in menShelter_info %}
-                            <p> {{men}} </p>
-                            {% endfor %}
-                            <br>
-                            <br>
-                        </div>
-                    </div>
+                <iframe src="https://www.google.com/maps/d/embed?mid=1h7SP6qmj7GmzMgsSdzSeb4PrsYorqjyt" width="640"
+                    height="480"></iframe>
             </center>
         </div>
-
-      
-     <br>
-        <!-- <a href="/index"> Home </a>
-        <br> <br>
-        <a href="/logout"> Logout </a> -->
-    </div>
-
-    <div>
-        <center>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1h7SP6qmj7GmzMgsSdzSeb4PrsYorqjyt" width="640"
-                height="480"></iframe>
-        </center>
-    </div>
-
-    </div>
-    </div>
+        </div>
 
 
-
-
-
-
-    <!-- <div> -->
-        <!-- <h2> Homeless Resources for Women</h2> -->
-        <!-- <h4>Thank you so much for using Your Shelter! Below are shelters near you!</h4> -->
-        <!-- <h1>{{womenShelter_info}}</h1> -->
-        <!-- {% for women in womenShelter_info %}
-        <p> {{women}} </p>
-        {% endfor %}
-        <br>
-        <a href="/index"> Home </a>
-        <br> <br>
-        <a href="/logout"> Logout </a> -->
-    <!-- </div> -->
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
@@ -161,6 +101,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
