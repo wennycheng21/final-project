@@ -329,7 +329,7 @@ body{
 }
 
 .newsbackground1{
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/b814d7de-4926-4955-b8b0-a46c58b06296/fx1.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://static01.nyt.com/images/2021/07/22/nyregion/00nyevictions/merlin_175551390_d29b7336-5b4d-4302-bb19-b386a04d64e4-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -337,14 +337,14 @@ body{
 
 
 .newsbackground2{
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://eponline.com/articles/2020/08/10/-/media/ENV/eponline/Images/2020/08/OHSimageAS137.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://static01.nyt.com/images/2021/07/26/nyregion/00nyhomelesshotels1/00nyhomelesshotels1-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 .newsbackground3{
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://www.sciencemag.org/sites/default/files/styles/article_main_image_-_1280w__no_aspect_/public/ca_0724NID_Earth_online.jpg?itok=glL-Bgbs);
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://static01.nyt.com/images/2021/06/21/us/21california-rent-web1/merlin_187182348_5ce5575a-e864-46fc-8702-b9be9f7ca2d8-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -352,24 +352,24 @@ body{
 
 /* news hover effects*/ 
 .newsbackground1:hover{
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://els-jbs-prod-cdn.jbs.elsevierhealth.com/cms/attachment/b814d7de-4926-4955-b8b0-a46c58b06296/fx1.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://static01.nyt.com/images/2021/07/22/nyregion/00nyevictions/merlin_175551390_d29b7336-5b4d-4302-bb19-b386a04d64e4-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
 }
 
 .newsbackground2:hover{
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://eponline.com/articles/2020/08/10/-/media/ENV/eponline/Images/2020/08/OHSimageAS137.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://static01.nyt.com/images/2021/07/26/nyregion/00nyhomelesshotels1/00nyhomelesshotels1-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
 }
 
 .newsbackground3:hover{
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://www.sciencemag.org/sites/default/files/styles/article_main_image_-_1280w__no_aspect_/public/ca_0724NID_Earth_online.jpg?itok=glL-Bgbs);
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(https://static01.nyt.com/images/2021/06/21/us/21california-rent-web1/merlin_187182348_5ce5575a-e864-46fc-8702-b9be9f7ca2d8-jumbo.jpg?quality=90&auto=webp);
   border-radius:10px;color:white;background-size:cover;
 }
 
 
 /* TEAM*/ 
 .team{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"); */
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
