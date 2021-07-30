@@ -63,22 +63,17 @@ def lgbtqShelter(users):
         lgbtq_list.append(lgbtq['features'][12]['attributes']['ADDRESS'])
         return lgbtq_list
 
-    
 
 
-    #Map
-    
-def mapTableCategories(gender,age):
+def touplet(n):
+    touplet1 = mapTableCategories("Women", "18+")
+    return touplet1[n]
+
+def mapTableCategories(gender, age):
     shelter_request_link = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/25/query?where=1%3D1&outFields=*&outSR=4326&f=json"
     attributes = requests.get(shelter_request_link).json()
-
-    number = len(attributes['features']) # number of shelters in list
-    hyperlinklist = []
-    addresslist = []
-    namelist = []
-    numberofbedsList = []
-    numberList = []
-
+    number = len(attributes['features'])  # number of shelters in list
+    filterShelterList = []
     for num in range(number):
         gender1 = attributes['features'][num]['attributes']['SUBTYPE']
         age1 = attributes['features'][num]['attributes']['AGES_SERVED']
@@ -87,19 +82,11 @@ def mapTableCategories(gender,age):
         numberofbeds1 = attributes['features'][num]['attributes']['NUMBER_OF_BEDS']
         if gender1 == gender:
             if age1 == age:
-                numberList.append(num+1)
-                hyperlinklist.append('https://www.google.com/maps?q=' + address1.replace(" ", "+"))
-                namelist.append(name1)
-                addresslist.append(address1)
-                numberofbedsList.append(numberofbeds1)
+                temDictionary = {"number": num + 1, "hyperlink": ('https://www.google.com/maps?q=' + address1.replace(" ", "+")),
+                                    "name": name1, 'address': address1, 'numberof_beds': numberofbeds1}
+                filterShelterList.append(temDictionary)
             else:
-                hyperlinklist.append(0)
+                continue
         else:
             continue
-        touplet = []
-        touplet = numberList,hyperlinklist, namelist, addresslist, numberofbedsList
-    return touplet
-
-def touplet(n):
-    touplet1 = mapTableCategories("Women", "18+")
-    return touplet1[n]
+    return filterShelterList

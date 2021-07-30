@@ -13,6 +13,7 @@ from model import youthShelter
 from model import lgbtqShelter
 from model import formResult
 import random 
+from model import mapTableCategories
 
 # import requests
 import os
@@ -50,6 +51,18 @@ id_number = random.randrange(1000, 9999)
 def index():
     return render_template('index_copy.html', time=datetime.now())
 
+@app.route('/map', methods = ["GET", "POST"])
+def locations():
+    if request.method == "GET":
+        return render_template("map.html")
+    else:
+        # state = request.form["state"]
+        gender = request.form["gender"]
+        age = request.form["age"]
+        dMap = mapTableCategories(gender,age)
+        print(dMap)
+        return render_template('map.html',
+                        dMap = dMap)
 
 # CONNECT TO DB, ADD DATA
 
@@ -99,9 +112,10 @@ def lgbtq():
 def donatevolunteer():
     return render_template('donatevolunteer.html', time=datetime.now())
 
-@app.route('/map', methods=['GET', 'POST'])
-def map():
-    return render_template('map.html', time=datetime.now())
+# @app.route('/map', methods=['GET', 'POST'])
+# def map():
+#     mapTableCategories()
+#     return render_template('map.html', time=datetime.now())
 
 @app.route('/transportation', methods=['GET', 'POST'])
 def transportation():
@@ -281,9 +295,9 @@ def logout():
     session.clear()
     return redirect('/')
 
-@app.route('/locations/table')
-def locations():
-    return render_template('locations_table.html')
+# @app.route('/locations/table')
+# def locations():
+#     return render_template('locations_table.html')
 
 
 
