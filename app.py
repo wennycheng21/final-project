@@ -112,6 +112,10 @@ def lgbtq():
 def donatevolunteer():
     return render_template('donatevolunteer.html', time=datetime.now())
 
+@app.route('/reference', methods=['GET', 'POST'])
+def reference():
+    return render_template('reference.html', time=datetime.now())
+
 # @app.route('/map', methods=['GET', 'POST'])
 # def map():
 #     mapTableCategories()
